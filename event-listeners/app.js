@@ -84,3 +84,21 @@ changeColor.addEventListener('click', function() {
     let bgColor = 'rgb(' + random(255) + ',' + random(255) + ',' + random(255) + ')';
     document.body.style.backgroundColor = bgColor;
 })
+
+
+var changeDiv = document.querySelectorAll('div.change');
+
+function ranColor() {
+    return 'rgb(' + random(255) + ',' + random(255) + ',' + random(255) + ')'
+}
+
+function random(number) {
+    return Math.floor(Math.random() * (number + 1));
+}
+
+for (let i = 0; i < changeDiv.length; i++) {
+    changeDiv[i].addEventListener('click', function() {
+        this.style.backgroundColor = ranColor();
+        this.style.color = ranColor();
+    })
+}
